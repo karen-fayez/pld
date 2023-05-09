@@ -1,0 +1,75 @@
+"Start Symbol" = <start>
+!--------------identifier----
+Id= ('_'|{Letter}){Alphanumeric}*        
+Num =('-'|'+')?{digit}+('.'{digit}+)?(('e'|('-'|'+')?{digit}+)'**'('+'|'-')?{digit}+)?     
+
+ 
+     
+       
+                       
+!-------------Rules-------
+<start>::='@'main'{'<body>'}'
+<body>::=<stmt-list>
+<stmt-list>::=<statment>','|<statment>','<stmt-list>
+<statment>::=<variable-declaration>|<constant-declaration>|<selection-stmt>|<iterable-stmt>|<function-call> |<function-def>|<print-stmt>|<input-stmt>
+<constant-declaration> ::= let <id> ':' <type> '=' <expression>
+<variable-declaration> ::= var <id> ':' <type> |var <id> ':' <type> '=' <expression>                        
+<id>::=Id
+<type> ::=  int  | float | bool | string | void           
+<expression> ::= <term> | <term> <addop> <expr>
+<term> ::= <factor> | <factor> <mulop> <term>
+<factor> ::= <id>|<num>
+<num>::=Num                              
+<addop> ::= '+' | '-'
+<mulop> ::= '*' | '/'
+!-----------selection statment -----------
+<selection-stmt>::=<if-stmt>|<switch-stmt>  
+!-----------if statment-------------------
+<if-stmt> ::= if <conditions> then <stmt-list>| if <conditions> then <stmt-list> else <stmt-list> | if <condition> <logical-operator> <condition> then <stmt-list> |if <condition> <logical-operator> <condition> then <stmt-list> else <stmt-list>
+<conditions>::='('<condition>')'|'('<condition>')' <logical-operator> '('<condition>')'                   
+<logical-operator> ::= and | or
+<condition> ::= <comparison-expression> 
+<comparison-expression> ::= <expression> <comparison-operator> <expression> 
+<comparison-operator> ::= '<' | '>' | '<=' | '>=' | '==' | '!='
+
+!---------------switch statment------------- 
+<switch-stmt>::=case <expression> <when-stmts> <else> End |case <expression> <in-stmts> <else> End
+<when-stmts>::=<when-stmt>|<when-stmt> <when-stmts>
+<when-stmt>::=when <expression> <stmt-list>
+<else>::=else <stmt-list>
+<in-stmts>::=<in-stmt>|<in-stmt> <in-stmts>
+<in-stmt>::= in <values> <stmt-list>
+<values>::=<value>|<values> ',' <value>
+<value>::=<expression>                                                                               
+
+!---------------iterble statment----
+<iterable-stmt>::=<for-stmt>|<while-loop>|<do-while-loop> 
+!-------------for-stmt-------------
+<for-stmt>::= for '(' <variable-declaration> ',' <condition> ',' <inc>|<dec> ')' ':' <stmt-list>EndFor
+<inc> ::= <expression>|'++' <id>
+<dec> ::= <expression>|'--' <id> 
+!-------------while statment------------
+<while-loop> ::= while <condition> do '{' <stmt-list> '}' Done 
+!-------------------do-while------
+<do-while-loop> ::= begin '{' <stmt-list> '}' while '('<condition>')' Done
+
+
+!-----------function definition-----------------
+
+<function-def> ::= make <func-name> '(' <parameter-list> ')' '{' <stmt-list> '}'
+
+<parameter-list> ::= <parameter> | <parameter>','<parameter-list>
+<parameter>::='('<id>':'<type>')'                  
+<func-name>::=<id>
+
+
+!-----------function call-------------------
+<function-call> ::= <func-name> '(' <argument-list> ')'
+
+<argument-list> ::= <expr>|<expr>','<argument-list>
+<expr>::=<id>|<function-call>                   
+!----------input statment---------
+<input-stmt>::=take <id>                                                  
+                                                                                             
+!----------output statment-------
+<print-stmt>::=show <id>   

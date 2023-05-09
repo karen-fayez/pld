@@ -1,0 +1,14 @@
+D:\New folder\languagesyntax\languagesyntax\bin\Debug\languagesyntax.exe.config
+D:\New folder\languagesyntax\languagesyntax\bin\Debug\languagesyntax.exe
+D:\New folder\languagesyntax\languagesyntax\bin\Debug\languagesyntax.pdb
+D:\New folder\languagesyntax\languagesyntax\bin\Debug\CalithaLib.dll
+D:\New folder\languagesyntax\languagesyntax\bin\Debug\GoldParserEngine.dll
+D:\New folder\languagesyntax\languagesyntax\obj\Debug\languagesyntax.csproj.AssemblyReference.cache
+D:\New folder\languagesyntax\languagesyntax\obj\Debug\languagesyntax.csproj.SuggestedBindingRedirects.cache
+D:\New folder\languagesyntax\languagesyntax\obj\Debug\languagesyntax.Form1.resources
+D:\New folder\languagesyntax\languagesyntax\obj\Debug\languagesyntax.Properties.Resources.resources
+D:\New folder\languagesyntax\languagesyntax\obj\Debug\languagesyntax.csproj.GenerateResource.cache
+D:\New folder\languagesyntax\languagesyntax\obj\Debug\languagesyntax.csproj.CoreCompileInputs.cache
+D:\New folder\languagesyntax\languagesyntax\obj\Debug\languagesyntax.csproj.CopyComplete
+D:\New folder\languagesyntax\languagesyntax\obj\Debug\languagesyntax.exe
+D:\New folder\languagesyntax\languagesyntax\obj\Debug\languagesyntax.pdb
